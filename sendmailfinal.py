@@ -6,6 +6,7 @@ load_dotenv()
 
 email_from = '0rcb0n3@rambler.ru'
 email_to = '0rcb0n3@rambler.ru'
+login = os.getenv('LOGIN')
 password = os.getenv('TOKEN')
 
 weblink = "https://dvmn.org/profession-ref-program/"
@@ -39,6 +40,6 @@ Content-Type: text/plain; charset="UTF-8";\n
 letter = letter.encode("UTF-8")
 
 server = smtplib.SMTP_SSL('smtp.rambler.ru', 465)
-server.login(email_from,password)
+server.login(login,password)
 server.sendmail(email_from, email_to, letter)
 
