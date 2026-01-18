@@ -14,8 +14,8 @@ friend_name = "Friend"
 company_name = "Devman"
 
 letter = """\
-From: 0rcb0n3@rambler.ru
-To: 0rcb0n3@rambler.ru
+From: %sender%
+To: %recipient%
 Subject: Приглашение!
 Content-Type: text/plain; charset="UTF-8";\n
 
@@ -35,7 +35,7 @@ Content-Type: text/plain; charset="UTF-8";\n
 
 Регистрируйся → %website%  
 На курсы, которые еще не вышли, можно подписаться и получить уведомление о релизе сразу на имейл.
-""".replace('%friend_name%',friend_name).replace('%my_name%',company_name).replace('%website%',weblink)
+""".replace('%friend_name%',friend_name).replace('%my_name%',company_name).replace('%website%',weblink).replace('%sender%',email_from).replace('%recipient%',email_to)
 
 letter = letter.encode("UTF-8")
 
